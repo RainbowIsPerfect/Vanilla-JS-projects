@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="app">
+            <h1 class="app__heading">To-Do App</h1>
+            <div class="app__menu menu">
+                <input class="menu__input" type="text" placeholder="Enter new task">
+                <div class="menu__container">
+                    <button class="menu__button">New task</button>
+                    <div class="menu__counters-container">
+                        <p class="menu__counter">Tasks incomplete: <span class="menu__counter-output menu__counter-output--incompleted"></span></p>
+                        <p class="menu__counter">Tasks complete: <span class="menu__counter-output menu__counter-output--completed"></span></p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="app__list-heading">Incompleted tasks</h2>
+            <ul class="app__list app__list--incompleted">
+            </ul>
+            <h2 class="app__list-heading">Completed tasks</h2>
+            <ul class="app__list app__list--completed">
+            </ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

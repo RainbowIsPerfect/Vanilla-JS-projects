@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+:root {
+    --main-color: #f2f6fa;
+    --main-hover: #e8f2fc;
+    --main-focus: #2276ca;
+    --app-bg: #0a1c2e;
+    --done: #596679;
+    --font-main: #f0f8ff;
+    --font-secondary: #0c1c2c;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-size: 16px;
+    background: #C9D6FF;
+    background: linear-gradient(to right, #e7e2e2, #C9D6FF); 
+}
+
+.container {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-color);
+    transition: all 0.2s ease;
+}
+
+.menu__input:hover {
+    background-color: var(--main-hover);
+}
+
+.menu__input:focus-visible {
+    outline: 3px solid var(--main-focus);
+}
+
+.menu__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.menu__counters-container {
+    display: flex;
+    font-size: 1.1rem;
+}
+
+.menu__counter-output {
+    font-size: 1.4rem;
+}
+
+.menu__counter:first-child {
+    margin-right: 10px;
+}
+
+.menu__button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    border: none;
+    color: var(--font-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu__button:hover {
+    background-color: var(--main-hover);
+}
+
+.menu__button:focus-visible {
+    outline: 3px solid var(--main-focus);
+}
+
+.app {
+    padding: 15px;
+    margin-top: 10px;
+    background-color: var(--app-bg);
+    color: var(--font-main);
+    border-radius: 5px;
+}
+
+.app__heading {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.app__list-heading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.app__list {
+    list-style-type: none;
+}
+
+.app__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--font-secondary);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    word-break: break-word;
+    transition: all 0.2s ease;
+}
+
+.app__list-item:hover {
+    background-color: var(--main-hover);
+}
+
+.app__list-item--done {
+    background: var(--done);
+    color: var(--font-main);
+    text-decoration: line-through;
+}
+
+.app__list-item--done:hover {
+    background: var(--main-hover);
+    color: var(--font-secondary);
+}
+
+.app__button-container {
+    display: flex;
+    margin-left: 10px;
+}
+
+.app__button {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--app-bg);
+    will-change: transform;
+    transition: all 0.2s ease;
+    padding: 2px;
+}
+
+.app__button:hover {
+    transform: scale(1.05);
+}
+
+.app__button:focus-visible {
+    outline: 2px solid var(--main-focus);
+    transform: scale(1.05);
+}
+
+.app__button:last-child {
+    margin-right: 0;
+}
+.app__button-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.app__list-item-text {
+    padding: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 560px){
+    .menu__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu__counters-container {
+        flex-direction: column;
+    }
+}
