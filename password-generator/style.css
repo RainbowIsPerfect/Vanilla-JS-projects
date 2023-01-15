@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 16px;
+    background: linear-gradient(30deg, #d5e8ee, #b1b1d3, #6693e7) no-repeat;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.app {
+    max-width: 350px;
+    padding: 50px 30px;
+    border-radius: 20px;
+    background-color: #f5f9fd;
+    box-shadow: 0px 3px 15px #131313;
+}
+
+.app__output-container {
+    position: relative;
+    width: 100%;
+    height: 47px;
+}
+
+.app__output {
+    padding: 10px 28px 10px 10px;
+    width: 100%;
+    min-height: 100%;
+    border-radius: 5px;
+    border: 1px solid #a0a0a0;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    position: relative;
+    outline: none;
+}
+
+.app__output:hover {
+    outline: 1px solid #585858;
+}
+
+.app__output:focus-visible {
+    outline: 1px solid #585858;
+}
+
+.app__copy {
+    border: none;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    outline: none;
+}
+
+.app__copy-image {
+    transition: all 0.2s ease;
+}
+
+.app__copy:focus-visible > .app__copy-image {
+    fill: rgb(92, 92, 92);
+}
+
+.app__copy:hover > .app__copy-image {
+    fill: rgb(92, 92, 92);
+}
+
+.app__options-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.app__option-item {
+    display: flex;
+    align-items: center;
+}
+
+.app__option-item:nth-child(4) {
+    margin-bottom: 20px;
+}
+
+.app__option-item:nth-child(5) {
+    margin-bottom: 20px;
+}
+
+.app__option-checkbox {
+    display: none;
+}
+
+.app__option-checkbox:checked + .app__option-label--checkbox::after {
+    opacity: 1;
+}
+
+.app__option-checkbox:checked + .app__option-label--checkbox::before {
+    background-color: #accbee;
+    border: 1px solid #333333;
+}
+
+.app__option-item--range {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.app__option-label {
+    color: #333333;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.app__option-label--checkbox {
+    position: relative;
+    margin-left: 22px;
+    outline: none;
+}
+
+.app__option-label--checkbox:focus-visible {
+    color: #000;
+}
+
+.app__option-label--checkbox:hover {
+    color: #000;
+}
+
+.app__option-label--checkbox:focus-visible::after {
+    opacity: 0.5;
+}
+
+.app__option-label--checkbox:focus-visible::before {
+    border: 1px solid #333333;
+}
+
+.app__option-label--checkbox::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgb(160, 160, 160);
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(0, -50%);
+}
+
+.app__option-label--checkbox::after {
+    content: url("img/check.svg");
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 24%;
+    left: -17.5px;
+    transform: translate(0, -50%);
+    opacity: 0;
+}
+
+.app__option-label--checkbox:hover::after {
+    opacity: 0.5;
+}
+
+.app__option-label--checkbox:hover::before {
+    border: 1px solid #333333;
+}
+
+.app__option-button {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.app__option-button:hover {
+    background-color: #e7eff5;
+    border: 1px solid #000000;
+}
+
+.app__option-button:focus-visible {
+    background-color: #e7eff5;
+    border: 1px solid #000000;
+}
+
+.app__option-range:focus {
+    outline: 2px solid #7db2f0;
+    border-radius: 5px;
+}
+
+.app__option-label--range:hover {
+    color: #000;
+}
+
+.app__tooltip {
+    position: fixed;
+    background-color: #5e9dd8;
+    color: #fff;
+    padding: 5px;
+    bottom: 15px;
+    right: 15px;
+}
+
+.app__tooltip::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 20px solid #5e9dd8;
+    transform: rotate(-180deg);
+}
+
+.app__tooltip--hidden {
+    display: none;
+}
+
+@media (max-width:450px){
+    .app {
+        padding: 50px 20px;
+    }
+}
