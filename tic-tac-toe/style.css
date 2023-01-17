@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(20deg, #92b3e4, #b6b6df, #d5e6f1);
+    font-family: Poppins;
+    font-size: 1px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.game {
+    padding: 20px;
+    background-color: #f4f8fc;
+    box-shadow: 0 3px 10px  #060f2b;
+    border-radius: 5px;
+}
+
+.game__heading {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.game__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game__score {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.game__text-win-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.game__text {
+    font-size: 1.2rem;
+}
+
+.game__field {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.game__button {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #45acd4;
+    position: relative;
+    cursor: pointer;
+}
+
+.game__button:nth-child(-n + 3) {
+    border-top: none;
+}
+
+.game__button:nth-child(1) {
+    border-left: none;
+}
+
+.game__button:nth-child(4) {
+    border-left: none;
+}
+
+.game__button:nth-child(7) {
+    border-left: none;
+}
+
+.game__button:nth-child(n) {
+    border-bottom: none;
+}
+
+.game__button:nth-child(n) {
+    border-right: none;
+}
+
+.game__button--xmark:hover {
+    background: #86c3db27 url("img/xmark_low_opacity.svg") center no-repeat;
+    background-size: 50%;
+}
+
+.game__button--xmark:focus-visible {
+    background: #86c3db27 url("img/xmark_low_opacity.svg") center no-repeat;
+    background-size: 50%;
+}
+
+.game__button--circle:hover {
+    background: #86c3db27 url("img/circle_low_opacity.svg") center no-repeat;
+    background-size: 50%;
+}
+
+.game__button--circle:focus-visible {
+    background: #86c3db27 url("img/circle_low_opacity.svg") center no-repeat;
+    background-size: 50%;
+}
+
+.game__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.game__button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    padding: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #78c5e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: #96cfe6;
+}

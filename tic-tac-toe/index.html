@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="game">
+            <h1 class="game__heading">Tic-Tac-Toe</h1>
+            <div class="game__text">
+                <div class="game__text-win-container">
+                    <p class="game__text-content">O wins: <span class="game__text-span wins__zero" data-figure="circle">0</span></p>
+                    <p class="game__text-content">X wins: <span class="game__text-span wins__xmark" data-figure="xmark">0</span></p>
+                </div>
+                <p class="game__text-content">Tie: <span class="game__text-span wins__xmark" data-figure="tie">0</span></p>
+            </div>
+            <div class="game__field">
+                <button class="game__button" data-index="0"></button>
+                <button class="game__button" data-index="1"></button>
+                <button class="game__button" data-index="2"></button>
+                <button class="game__button" data-index="3"></button>
+                <button class="game__button" data-index="4"></button>
+                <button class="game__button" data-index="5"></button>
+                <button class="game__button" data-index="6"></button>
+                <button class="game__button" data-index="7"></button>
+                <button class="game__button" data-index="8"></button>
+            </div>
+            <div class="game__button-container">
+                <button class="game__reset-field-button button">Reset Field</button>
+                <button class="game__reset-score-button button">Reset Score</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
