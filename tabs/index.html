@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabs</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <nav class="tabs__nav">
+                <ul class="tabs__list">
+                    <li class="tabs__list-item">
+                        <button href="#" class="tabs__button tabs__button--active" data-tab="1">TAB 1</button>
+                    </li>
+                    <li class="tabs__list-item">
+                        <button href="#" class="tabs__button" data-tab="2">TAB 2</button>
+                    </li>
+                    <li class="tabs__list-item">
+                        <button href="#" class="tabs__button" data-tab="3">TAB 3</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tabs__content content" data-content="1">
+                <h2 class="content__heading">Heading 1</h2>
+                <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum
+                    dolor
+                    sit amet consectetur adipisicing elit. Quibusdam, vero exercitationem. Iure nam est molestiae at
+                    voluptatem,
+                    inventore explicabo aspernatur esse aperiam vitae ipsa cum. Quibusdam, vero exercitationem. Iure nam
+                    est molestiae at voluptatem,
+                    inventore explicabo aspernatur esse aperiam vitae ipsa cum.</p>
+            </div>
+            <div class="tabs__content content tabs__content--hidden" data-content="2">
+                <h2 class="content__heading">Heading 2</h2>
+                <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, modi.
+                    Lorem ipsum dolor
+                    sit amet adipisicing elit. Quibusdam, vero exercitationem. Iure nam est molestiae at voluptatem,
+                    inventore explicabo aspernatur esse aperiam vitae ipsa cum. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Fugiat, odio.</p>
+            </div>
+            <div class="tabs__content content tabs__content--hidden" data-content="3">
+                <h2 class="content__heading">Heading 3</h2>
+                <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, modi.
+                    Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Quibusdam, vero exercitationem. Iure nam est molestiae at
+                    voluptatem,
+                    inventore explicabo aspernatur esse aperiam. Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Dolore illum excepturi voluptates amet quas tempora.</p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

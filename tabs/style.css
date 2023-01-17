@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --main: #161844;
+    --bg-main: #f0f6fc;
+    --tab-color: #dfecf7;
+    --hover: #c0d7ee;
+    --hover-active: #252979;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: Poppins;
+    background: linear-gradient(-30deg, #b5d5df, #6363dd) no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 10px 15px;
+    margin: 0 auto;
+}
+
+.tabs__list {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+}
+
+.tabs__list-item {
+    border-right: 1px solid var(--main);
+    border-top: 1px solid var(--main);
+    overflow: hidden;
+}
+
+.tabs__list-item:first-child {
+    border-top-left-radius: 10px;
+    border-left: 1px solid var(--main);
+}
+
+.tabs__list-item:last-child {
+    border-top-right-radius: 10px;
+}
+
+.tabs__button {
+    padding: 10px 15px;
+    border: none;
+    border-bottom: none;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--main);
+    background-color: var(--bg-main);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs__button:hover {
+    background-color: var(--hover);   
+}
+
+.tabs__button--active {
+    background-color: var(--main);
+    color: var(--tab-color);
+}
+
+.tabs__button--active:hover {
+    background-color: var(--hover-active);
+}
+
+.tabs__content {
+    max-width: 800px;
+    padding: 25px;
+    border: 1px solid var(--main);
+    border-radius: 0 10px 10px 10px;
+    color: var(--main);
+    background-color: var(--bg-main);
+    word-break: break-word;
+    box-shadow: 0 5px 10px var(--main);
+}
+
+.tabs__content--hidden {
+    display: none;
+}
+
+.content__heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--main);
+}
+
+.content__paragraph {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
