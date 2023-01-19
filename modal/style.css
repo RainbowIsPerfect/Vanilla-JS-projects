@@ -62,16 +62,17 @@ body {
     background-color: #232a3b;
     padding: 5px 10px;
     border-radius: 10px;
-    border: 2px solid #090b0f;
-    cursor: pointer;
     font-family: inherit;
     color: #ccc;
     font-size: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .card__button:hover {
-    background-color: #496396;
+    background-color: #234079;
     color: rgb(235, 235, 235);
 }
 
@@ -193,10 +194,6 @@ body {
     background-color: #ecf0f7;
     padding: 20px 45px 20px 20px;
     color: rgb(0, 0, 0);
-}
-
-.overflow {
-    overflow: hidden;
 }
 
 @media (max-width: 997px){
