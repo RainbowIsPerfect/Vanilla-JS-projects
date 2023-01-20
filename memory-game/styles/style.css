@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(#b7cbdd), to(#cddfee));
+  background: linear-gradient(to top, #b7cbdd, #cddfee);
+  font-family: Poppins;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.winning-menu {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #151516;
+  font-size: 50px;
+}
+.winning-menu--active {
+  visibility: visible;
+}
+
+.button {
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(219, 234, 241);
+  color: #151516;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.button:hover {
+  background-color: rgb(154, 202, 224);
+}
+.button:focus-visible {
+  outline: 2px solid #151516;
+  background-color: rgb(154, 202, 224);
+}
+
+.select {
+  padding: 5px;
+  background-color: rgb(219, 234, 241);
+  border: none;
+  border-radius: 5px;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 700px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px 20px 30px 20px;
+}
+.game--inactive {
+  pointer-events: none;
+}
+.game__button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+.game__heading {
+  margin-bottom: 15px;
+  line-height: 40px;
+  text-align: center;
+  color: #151516;
+  font-size: 40px;
+}
+.game__cards-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  list-style-type: none;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  background-color: rgb(219, 234, 241);
+  border-radius: 10px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  background-color: rgb(154, 202, 224);
+}
+.card:focus {
+  background-color: rgb(154, 202, 224);
+}
+.card--active {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  pointer-events: none;
+}
+.card--done {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  pointer-events: none;
+}
+.card__view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card__back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__icon {
+  width: 40%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 5px;
+  }
+  .game {
+    padding: 20px 5px 30px 5px;
+  }
+  .card {
+    width: 130px;
+    height: 130px;
+  }
+}
