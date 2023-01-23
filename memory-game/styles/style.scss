@@ -110,7 +110,7 @@ body {
     perspective: 500px;
     transform-style: preserve-3d;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease-in-out;
         &:hover {
             background-color: rgb(154, 202, 224);
         }
