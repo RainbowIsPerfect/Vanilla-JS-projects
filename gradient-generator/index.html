@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Gradient generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+            <div class="app__color-preview"></div>
+            <div class="app__options">
+                <label class="app__label" for="gradient">Style</label>
+                <select class="app__select app__select--gradient" id="gradient">
+                    <option value="random">Random</option>
+                    <option value="linear-gradient">Linear-gradient</option>
+                    <option value="radial-gradient">Radial-gradient</option>
+                </select>
+                <label class="app__label" for="colors">Colors</label>
+                <select class="app__select app__select--colors" id="colors">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <div class="app__output output">
+                    <textarea class="output__text" cols="40" rows="5" readonly></textarea>
+                    <button class="output__copy-button">Copy to clipboard</button> 
+                </div>
+                <button class="app__button">Generate</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

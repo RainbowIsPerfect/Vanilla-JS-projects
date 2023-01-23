@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, button, textarea, select {
+    font-family: inherit;
+}
+
+body,
+html {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9dddfd5;
+    font-size: 16px;
+    font-family: Poppins;
+    background: #5018c0cc;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.app {
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #fff;
+    &__options {
+        display: flex;
+        flex-direction: column;
+    }
+    &__select {
+        padding: 0.2rem;
+        margin-bottom: 0.4rem;
+        border: 1px solid #ccc;
+        border-radius: 0.3rem;
+        font-size: 1.2rem;
+    }
+    &__label {
+        padding-left: 0.1rem;
+        margin-bottom: 0.05rem;
+        font-size: 1.1rem;
+    }
+    &__output {
+        margin-bottom: 0.7rem;
+    }
+    &__button {
+        padding: 0.45rem;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        border-radius: 0.3rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+    &__button:hover {
+        background-color: #5018c0cc;
+        color: #fff;
+    }
+    &__color-preview {
+        height: 250px;
+        margin-bottom: 0.4rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+    }
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    &__copy-button {
+        padding: 0.2rem;
+        font-size: 1rem;
+        border: none;
+        border-top: 1px solid #ccc;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    &__copy-button:hover {
+        background-color: #5018c0cc;
+        color: #fff;
+    }
+    &__copy-image {
+        width: 20px;
+        height: 20px;
+    }
+    &__text {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        resize: none;
+        border: none;
+        outline: none;
+    }
+}
+
+@media (max-width:400px){
+    .app {
+        padding: 2rem 0.5rem;
+    }
+}
