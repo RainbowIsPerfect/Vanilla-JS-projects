@@ -47,5 +47,3 @@ class Modal {
         this.setClasses();
     }
 }
-
-export default Modal;

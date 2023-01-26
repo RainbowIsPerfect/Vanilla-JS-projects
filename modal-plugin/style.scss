@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .modal-enabled {
     overflow: hidden;
 }
@@ -11,6 +18,7 @@
 .modal {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
@@ -37,12 +45,15 @@
 
     &__container {
         max-width: 1200px;
-        margin: auto;
+        width: 100%;
+        margin: 0 auto;
         padding: 10px;
     }
 
     &__content {
         background-color: #fff;
+        text-align: center;
+        font-size: 3rem;
         padding: 10px;
         cursor: default;
     }
