@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-enabled {
+    overflow: hidden;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    &--animated {
+        transition: all 0.2s ease-in;
+    }
+
+    &--blured {
+        backdrop-filter: blur(1px);
+    }
+
+    &--active {
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    &__container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    &__content {
+        background-color: #fff;
+        padding: 10px;
+        cursor: default;
+    }
+}
