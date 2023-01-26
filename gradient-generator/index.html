@@ -16,18 +16,19 @@
             <div class="app__options">
                 <label class="app__label" for="gradient">Style</label>
                 <select class="app__select app__select--gradient" id="gradient">
-                    <option value="random">Random</option>
-                    <option value="linear-gradient">Linear-gradient</option>
-                    <option value="radial-gradient">Radial-gradient</option>
+                    <option class="app__option" value="random">Random</option>
+                    <option class="app__option" value="linear-gradient">Linear-gradient</option>
+                    <option class="app__option" value="radial-gradient">Radial-gradient</option>
+                    <option class="app__option" value="conic-gradient">Conic-gradient</option>
                 </select>
                 <label class="app__label" for="colors">Colors</label>
                 <select class="app__select app__select--colors" id="colors">
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option class="app__option" value="2">2</option>
+                    <option class="app__option" value="3">3</option>
+                    <option class="app__option" value="4">4</option>
                 </select>
                 <div class="app__output output">
-                    <textarea class="output__text" cols="40" rows="5" readonly></textarea>
+                    <textarea class="output__text" cols="40" rows="5" readonly tabindex="-1"></textarea>
                     <button class="output__copy-button">Copy to clipboard</button> 
                 </div>
                 <button class="app__button">Generate</button>

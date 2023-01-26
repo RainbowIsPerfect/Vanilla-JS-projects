@@ -45,6 +45,13 @@ body {
         border: 1px solid #ccc;
         border-radius: 0.3rem;
         font-size: 1.2rem;
+        &:focus {
+            outline: 2px solid #5018c0cc;
+        }
+    }
+    &__option {
+        background-color: #5018c0cc;
+        color: #fff;
     }
     &__label {
         padding-left: 0.1rem;
@@ -60,12 +67,17 @@ body {
         background-color: transparent;
         border-radius: 0.3rem;
         font-size: 1.1rem;
+        outline: none;
         cursor: pointer;
         transition: all 0.25s ease;
-    }
-    &__button:hover {
-        background-color: #5018c0cc;
-        color: #fff;
+        &:focus {
+            background-color: #5018c0cc;
+            color: #fff;
+        }
+        &:hover {
+            background-color: #5018c0cc;
+            color: #fff;
+        }
     }
     &__color-preview {
         height: 250px;
@@ -87,19 +99,24 @@ body {
         border: none;
         border-top: 1px solid #ccc;
         background-color: transparent;
+        outline: none;
         cursor: pointer;
         transition: all 0.2s ease;
-    }
-    &__copy-button:hover {
-        background-color: #5018c0cc;
-        color: #fff;
+        &:focus {
+            background-color: #5018c0cc;
+            color: #fff;
+        }
+        &:hover {
+            background-color: #5018c0cc;
+            color: #fff;
+        }
     }
     &__copy-image {
         width: 20px;
         height: 20px;
     }
     &__text {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 0.3rem;
         resize: none;
         border: none;
@@ -107,8 +124,15 @@ body {
     }
 }
 
-@media (max-width:400px){
+@media (max-width:430px){
     .app {
         padding: 2rem 0.5rem;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .container {
+        padding: 0;
+        margin: 0;
     }
 }
