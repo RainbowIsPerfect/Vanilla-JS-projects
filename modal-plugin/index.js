@@ -1,6 +1,5 @@
 const newModal = new Modal({
     backdropBlur: true,
-    animated: true,
+    animationType: "bounce",
+    animationDuration: 0.3,
 });
-
-newModal.init();

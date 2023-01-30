@@ -9,6 +9,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
+}
+
+.button {
+    padding: 5px;
 }
 
 .modal-enabled {
@@ -18,43 +23,107 @@ body {
 .modal {
     display: flex;
     justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1000;
     visibility: hidden;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-
-    &--animated {
-        transition: all 0.2s ease-in;
-    }
-
-    &--blured {
-        backdrop-filter: blur(1px);
-    }
-
+    transition: background-color 0.2s ease-in-out;
     &--active {
         visibility: visible;
         background-color: rgba(0, 0, 0, 0.7);
     }
-
+    &--blured {
+        backdrop-filter: blur(1px);
+    }
     &__container {
+        margin: auto 0;
         max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
         padding: 10px;
     }
-
     &__content {
+        display: none;
         background-color: #fff;
-        text-align: center;
-        font-size: 3rem;
-        padding: 10px;
-        cursor: default;
+        border-radius: 10px;
+        padding: 20px;
+        &--active {
+            display: block;
+        }
+
+    }
+}
+
+.fadeIn {
+    animation: fadeIn var(--time) ease-in-out;
+}
+.fadeInDown {
+    animation: fadeInDown var(--time) ease-in-out;
+}
+.fadeInUp {
+    animation: fadeInUp var(--time) ease-in-out;
+}
+.zoomIn {
+    animation: zoomIn var(--time) ease-in-out;
+}
+.bounce {
+    animation: bounce var(--time) ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
