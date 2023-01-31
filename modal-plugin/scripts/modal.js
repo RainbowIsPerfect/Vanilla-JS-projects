@@ -7,7 +7,6 @@ class Modal {
         }
         this.animations = ["none", "fadeIn", "zoomIn", "fadeInDown", "fadeInUp", "bounce"];
         this.options = {...this.default, ...options};
-        this.init();
     }
     setModalOverlayClasses() {
         const overlayClasses = [];
@@ -51,6 +50,19 @@ class Modal {
     }
     setModal() {
         this.modalOverlay.addEventListener('click', e => this.close(e));
+    }
+    createModalMarkup() {
+        const modalHTML = `<div class="modal"><div class="modal__container"></div></div>`;
+        document.body.insertAdjacentHTML('afterbegin', modalHTML);
+    }
+    setContent(content, data) {
+        const modalContent = `<div class="modal__content" data-modal="${data}">${content}</div>`
+        if (document.querySelector('.modal')) {
+            document.querySelector('.modal').children[0].insertAdjacentHTML('beforeend', modalContent);
+        } else {
+            this.createModalMarkup();
+            document.querySelector('.modal').children[0].insertAdjacentHTML('beforeend', modalContent);
+        }
     }
     init() {
         this.modalOverlay = document.querySelector('.modal');
