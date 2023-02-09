@@ -5,7 +5,9 @@ const tooltip = document.querySelector('.tooltip');
 
 const colorValuesArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
-window.addEventListener('load', applyColor);
+let timeout;
+
+window.addEventListener('DOMContentLoaded', applyColor);
 button.addEventListener('click', applyColor);
 colorContainers.forEach(container => container.addEventListener('click', copyColor));
 tooltip.addEventListener('click', () => tooltip.classList.remove('tooltip--active'));
@@ -21,16 +23,16 @@ function getRandomHexColor() {
 function applyColor() {
     outputs.forEach(el => {
         el.textContent = getRandomHexColor();
-        el.closest('button').style.cssText = `background-color: ${el.textContent}`;
+        el.closest('button').style.backgroundColor = `${el.textContent}`;
     })
 }
 
-function copyColor(e) {
-    const currentColor = e.target.children[0].textContent;
+function copyColor() {
+    if (typeof timeout === 'number') window.clearTimeout(timeout);
+    const currentColor = this.children[0].textContent;
     navigator.clipboard.writeText(currentColor);
     tooltip.classList.add('tooltip--active');
-    setTimeout(() => {
+    timeout = window.setTimeout(() => {
         tooltip.classList.remove('tooltip--active');
-    }, 2000)
+    }, 2000);
 }
-
