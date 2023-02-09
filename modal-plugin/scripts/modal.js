@@ -1,76 +1,84 @@
-class Modal {
+export class Modal {
     constructor(options) {
         this.default = {
-            backdropBlur: false,
-            animationType: "fadeIn",
-            animationDuration: 0.3,
+            background: {
+                backdropBlur: 1,
+                backgroundOpacity: 0.8,
+            },
+            animation: {
+                animationType: "fadeIn",
+                animationDuration: 0.3,
+            },
         }
         this.animations = ["none", "fadeIn", "zoomIn", "fadeInDown", "fadeInUp", "bounce"];
         this.options = {...this.default, ...options};
     }
-    setModalOverlayClasses() {
-        const overlayClasses = [];
-        if (this.options.backdropBlur === true) overlayClasses.push("modal--blured");
-        return overlayClasses.length === 0 ? null : this.modalOverlay.classList.add(...overlayClasses);
+
+    setOptions() {
+        let properties = "";
+        if (this.options.background.backdropBlur) properties += `backdrop-filter: blur(${this.options.background.backdropBlur}px);`;
+        if (this.options.background.backdropBlur) properties += `background-color: rgba(0, 0, 0, ${this.options.background.backgroundOpacity})`;
+        this.overlay.setAttribute('style', properties);
+        this.overlay.querySelectorAll('.modal__content').forEach(content => {
+            if (this.animations.includes(this.options.animation.animationType) && this.options.animation.animationType !== "none") {
+                content.classList.add(this.options.animation.animationType);
+                content.style.setProperty('--time', `${this.options.animation.animationDuration}s`);
+            }
+        })
     }
-    setModalWindowClasses() {
-        const windowClasses = [];
-        if (typeof this.options.animationDuration === "number" && this.options.animationType !== "none") {
-            this.modals.forEach(modal => modal.style.setProperty('--time', `${this.options.animationDuration}s`));
-        }
-        if (this.animations.includes(this.options.animationType) && this.options.animationType !== "none") {
-            windowClasses.push(this.options.animationType);
-        }
-        return windowClasses.length === 0 ? null : this.modals.forEach(modal => modal.classList.add(...windowClasses));
+
+    open(event) {
+        this.currentModal = document.querySelector(`[data-modal="${event.target.dataset.trigger}"]`);
+        this.currentModal.classList.add('modal__content--active');
+        document.body.classList.add('modal-enabled');
+        this.overlay.classList.add('modal--active');
     }
-    open(e) {
-        this.currentModal = this.modals.find(modal => modal.dataset.modal === e.target.dataset.trigger);
-        if (this.currentModal) {
-            this.handleActiveClasses();
-        }
-    }
-    close(e) {
-        if (e.target.closest('.modal__content') === null) {
-            this.handleActiveClasses(false);
-        }
-    }
-    handleActiveClasses(open = true) {
-        if (open) {
-            this.modalOverlay.classList.add('modal--active');
-            this.currentModal.classList.add('modal__content--active');
-            document.body.classList.add('modal-enabled');
-        } else {
-            this.modalOverlay.classList.remove('modal--active');
+
+    close(event) {
+        if (!event.target.closest('.modal__content')) {
             this.currentModal.classList.remove('modal__content--active');
             document.body.classList.remove('modal-enabled');
+            this.overlay.classList.remove('modal--active');
         }
     }
-    setTriggers() {
-        this.triggers.forEach(trigger => trigger.addEventListener('click', e => this.open(e)));
+
+    events() {
+        this.triggers.forEach(trigger => trigger.addEventListener('click', event => this.open(event)));
+        this.overlay.addEventListener('click', (event) => this.close(event));
     }
-    setModal() {
-        this.modalOverlay.addEventListener('click', e => this.close(e));
+
+    init() {
+        this.overlay = document.querySelector('.modal');
+        this.triggers = document.querySelectorAll('[data-trigger]');
+        this.events();
+        this.setOptions();
     }
+}
+
+
+export class CustomModal extends Modal {
+    constructor(options) {
+        super();
+        this.options = {...this.default, ...options};
+    }
+
     createModalMarkup() {
-        const modalHTML = `<div class="modal"><div class="modal__container"></div></div>`;
+        const modalHTML = `
+                        <div class="modal">
+                            <div class="modal__container">
+                            </div>
+                        </div>`;
         document.body.insertAdjacentHTML('afterbegin', modalHTML);
     }
+
     setContent(content, data) {
-        const modalContent = `<div class="modal__content" data-modal="${data}">${content}</div>`
-        if (document.querySelector('.modal')) {
-            document.querySelector('.modal').children[0].insertAdjacentHTML('beforeend', modalContent);
+        const modalContent = `<div class="modal__content" data-modal="${data}">${content}</div>`;
+        const modal = document.querySelector('.modal');
+        if (modal) {
+            modal.children[0].insertAdjacentHTML('beforeend', modalContent);
         } else {
             this.createModalMarkup();
-            document.querySelector('.modal').children[0].insertAdjacentHTML('beforeend', modalContent);
+            modal.children[0].insertAdjacentHTML('beforeend', modalContent);
         }
-    }
-    init() {
-        this.modalOverlay = document.querySelector('.modal');
-        this.modals = [...this.modalOverlay.querySelectorAll('[data-modal]')];
-        this.triggers = document.querySelectorAll("[data-trigger]");
-        this.setTriggers();
-        this.setModal();
-        this.setModalOverlayClasses();
-        this.setModalWindowClasses();
     }
 }

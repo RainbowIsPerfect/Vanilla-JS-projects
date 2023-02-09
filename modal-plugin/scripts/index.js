@@ -1,14 +1,29 @@
-const newModal = new Modal({
-    backdropBlur: true,
-    animationType: "bounce",
-    animationDuration: 0.3,
-});
+import {CustomModal, Modal} from "../dist/modal.min.js";
 
-newModal.setContent(`<p class="p">New p New p New p New p New p New p New p </p>`, 1);
-newModal.setContent(`<p class="p">New p2 New p2 New p2 New p2 New p2 New p2</p>`, 2);
+const newModal = new Modal({
+    animation: {
+        animationType: "fadeInUp",
+        animationDuration: 0.5,
+    },
+    background: {
+        backdropBlur: 1,
+        backgroundOpacity: 0.8,
+    }
+});
 
 newModal.init();
 
+// const cmodal = new CustomModal({
+//     animation: {
+//         animationType: "fadeInUp",
+//         animationDuration: 1.5,
+//     },
+//     background: {
+//         backdropBlur: 1,
+//         backgroundOpacity: 0.6,
+//     }
+// })
 
-
-// newModal.initHTMl();
+// cmodal.createModalMarkup();
+// cmodal.setContent('<p>Content</p>', 3);
+// cmodal.init();
