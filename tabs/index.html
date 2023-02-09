@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Tabs</title>
 </head>
 
@@ -15,17 +18,17 @@
             <nav class="tabs__nav">
                 <ul class="tabs__list">
                     <li class="tabs__list-item">
-                        <button href="#" class="tabs__button tabs__button--active" data-tab="1">TAB 1</button>
+                        <button class="tabs__button tabs__button--active" data-tab="1">TAB 1</button>
                     </li>
                     <li class="tabs__list-item">
-                        <button href="#" class="tabs__button" data-tab="2">TAB 2</button>
+                        <button class="tabs__button" data-tab="2">TAB 2</button>
                     </li>
                     <li class="tabs__list-item">
-                        <button href="#" class="tabs__button" data-tab="3">TAB 3</button>
+                        <button class="tabs__button" data-tab="3">TAB 3</button>
                     </li>
                 </ul>
             </nav>
-            <div class="tabs__content content" data-content="1">
+            <div class="tabs__content tabs__content--active" data-content="1">
                 <h2 class="content__heading">Heading 1</h2>
                 <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum
                     dolor
@@ -35,7 +38,7 @@
                     est molestiae at voluptatem,
                     inventore explicabo aspernatur esse aperiam vitae ipsa cum.</p>
             </div>
-            <div class="tabs__content content tabs__content--hidden" data-content="2">
+            <div class="tabs__content" data-content="2">
                 <h2 class="content__heading">Heading 2</h2>
                 <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, modi.
                     Lorem ipsum dolor
@@ -43,7 +46,7 @@
                     inventore explicabo aspernatur esse aperiam vitae ipsa cum. Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Fugiat, odio.</p>
             </div>
-            <div class="tabs__content content tabs__content--hidden" data-content="3">
+            <div class="tabs__content" data-content="3">
                 <h2 class="content__heading">Heading 3</h2>
                 <p class="content__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, modi.
                     Lorem ipsum dolor
