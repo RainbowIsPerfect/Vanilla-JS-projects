@@ -9,7 +9,7 @@ const passwordLengthField = document.querySelector('.app__password-length');
 button.addEventListener('click', generatePassword);
 copyButton.addEventListener('click', copyToClipboard);
 rangeInput.addEventListener('input', showCurrentLength);
-window.addEventListener('load', showCurrentLength);
+window.addEventListener('DOMContentLoaded', showCurrentLength);
 
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
